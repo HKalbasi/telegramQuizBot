@@ -1,0 +1,49 @@
+{
+    "botToken" : "put-your-token-here",
+    "adminPassword" : "put-admin-password-here",
+    "startBotTime" : "2019/03/06 00:00:00 GMT+0430 (Iran Daylight Time)",
+    "endBotTime" : "2019/04/06 00:00:00 GMT+0430 (Iran Daylight Time)",
+    "contest" : [
+        {
+          "type": "option",
+          "nam": "تستی",
+          "duration": 3.5,
+          "answer": "-",
+          "problem": [
+            { "nam": "1", "score": 4 },
+            { "nam": "2", "score": 4 },
+            { "nam": "3", "score": 4 },
+            { "nam": "4", "score": 4 },
+            { "nam": "5", "score": 4 },
+            { "nam": "6", "score": 4 },
+            { "nam": "7", "score": 4 },
+            { "nam": "8", "score": 4 },
+            { "nam": "9", "score": 4 },
+            { "nam": "10","score": 4 },
+            { "nam": "11","score": 4 },
+            { "nam": "12","score": 4 },
+            { "nam": "13","score": 4 },
+            { "nam": "14","score": 4 },
+            { "nam": "15","score": 4 },
+            { "nam": "16","score": 4 },
+            { "nam": "17","score": 4 },
+            { "nam": "18","score": 4 },
+            { "nam": "19","score": 4 },
+            { "nam": "20","score": 4 }
+          ]
+        },
+        {
+          "type": "hand",
+          "nam": "تشریحی",
+          "duration": 4,
+          "problem": [
+            { "nam": "1الف", "score": 4 },
+            { "nam": "1ب", "score": 6 },
+            { "nam": "1ج", "score": 10 },
+            { "nam": "2", "score": 20 },
+            { "nam": "3", "score": 20 },
+            { "nam": "4", "score": 20 }
+          ]
+        }
+    ]
+}

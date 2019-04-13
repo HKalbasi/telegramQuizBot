@@ -2,11 +2,12 @@ const fetch = require('node-fetch');
 const { promisify } = require('util');
 const writeFile = promisify(require('fs').writeFile);
 const readFile = promisify(require('fs').readFile);
+const config = require('./config');
 
-const token = 'putYourTokenHere';
+const token = config.botToken;
 const url = `https://api.telegram.org/bot${token}/`;
-const startBotTime = new Date('2019/03/06 00:00:00 GMT+0430 (Iran Daylight Time)');
-const endTime = new Date('2019/05/06 00:00:00 GMT+0430 (Iran Daylight Time)');
+const startBotTime = new Date(config.startBotTime);
+const endTime = new Date(config.endBotTime);
 let lstOffset = 0;
 const idToUsers = new Map();
 
@@ -18,7 +19,7 @@ function div(t, x) {
 }
 
 const secret = {
-  password: 'passwordeAdmin',
+  password: config.adminPassword,
 };
 
 const constants = {
@@ -97,49 +98,7 @@ async function forwardMessage(id, msg) {
 }
 
 
-const contest = [
-  {
-    type: 'option',
-    nam: 'تستی',
-    duration: 3.5,
-    answer: '-',
-    problem: [
-      { nam: '1', score: 4 },
-      { nam: '2', score: 4 },
-      { nam: '3', score: 4 },
-      { nam: '4', score: 4 },
-      { nam: '5', score: 4 },
-      { nam: '6', score: 4 },
-      { nam: '7', score: 4 },
-      { nam: '8', score: 4 },
-      { nam: '9', score: 4 },
-      { nam: '10', score: 4 },
-      { nam: '11', score: 4 },
-      { nam: '12', score: 4 },
-      { nam: '13', score: 4 },
-      { nam: '14', score: 4 },
-      { nam: '15', score: 4 },
-      { nam: '16', score: 4 },
-      { nam: '17', score: 4 },
-      { nam: '18', score: 4 },
-      { nam: '19', score: 4 },
-      { nam: '20', score: 4 },
-    ],
-  },
-  {
-    type: 'hand',
-    nam: 'تشریحی',
-    duration: 4,
-    problem: [
-      { nam: '1الف', score: 100 },
-      { nam: '1ب', score: 100 },
-      { nam: '1ج', score: 100 },
-      { nam: '2', score: 100 },
-      { nam: '3', score: 100 },
-      { nam: '4', score: 100 },
-    ],
-  },
-];
+const { contest } = config;
 
 
 const initUserContest = () => contest.map(c => ({
